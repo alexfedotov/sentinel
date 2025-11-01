@@ -12,31 +12,22 @@ When a rule matches an event, Sentinel triggers asynchronous notifications such 
 - 🧩 **Rule engine** with DSL syntax:
   ```text
   when event.type == "order" and amount > 500 then notify("slack:#big-orders")
-⚙️ Rule management API — CRUD endpoints for user-defined rules
 
-🧠 Async workers for background event evaluation
+- Rule management API — CRUD endpoints for user-defined rules
 
-🔔 Slack/Webhook notifier with retry & exponential backoff
+- Async workers for background event evaluation
 
-📊 Prometheus metrics at /metrics
+- Slack/Webhook notifier with retry & exponential backoff
 
-🗃️ PostgreSQL + Redis orchestration via Docker Compose
+- Prometheus metrics at /metrics
 
-🧱 Pydantic models, SQLAlchemy ORM, and mypy type safety
+- PostgreSQL + Redis orchestration via Docker Compose
 
-🧰 Alembic migrations and modular, production-ready architecture
+- Pydantic models, SQLAlchemy ORM, and mypy type safety
 
-🧠 Tech Stack
-Layer	Technology
-API & Background Tasks	FastAPI, asyncio
-Database & ORM	PostgreSQL, SQLAlchemy, Alembic
-Queue / Stream	Redis (or Kafka optional)
-DSL Parsing	Lark or Parsimonious
-Notifications	Slack API, async HTTP
-Metrics	Prometheus
-Deployment	Docker Compose
+- Alembic migrations and modular, production-ready architecture
 
-🚀 Quick Start
+- Quick Start
 
 ```
 # Clone the repo
@@ -54,7 +45,7 @@ curl -X POST http://localhost:8000/events \
   -d '{"type": "order", "amount": 750}'
 ```
 
-📜 Example Rule
+# Example Rule
 ```
 {
   "name": "High value orders",
@@ -62,7 +53,7 @@ curl -X POST http://localhost:8000/events \
 }
 ```
 
-📊 Metrics
+# Metrics
 Sentinel exposes Prometheus metrics at:
 
 ```
@@ -78,7 +69,7 @@ Example metrics:
 - notifications_sent_total
 
 
-🧱 Project Structure
+# Project Structure
 ```
 sentinel/
 │

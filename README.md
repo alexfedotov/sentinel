@@ -37,52 +37,49 @@ Metrics	Prometheus
 Deployment	Docker Compose
 
 🚀 Quick Start
-bash
-Copy code
+
+```
 # Clone the repo
 git clone https://github.com/<your-username>/sentinel.git
 cd sentinel
+```
 
 # Start the stack
 docker-compose up --build
 Test the API
-bash
-Copy code
+
+```
 curl -X POST http://localhost:8000/events \
   -H "Content-Type: application/json" \
   -d '{"type": "order", "amount": 750}'
+```
+
 📜 Example Rule
-json
-Copy code
+```
 {
   "name": "High value orders",
   "dsl": "when event.type == 'order' and amount > 500 then notify('slack:#big-orders')"
 }
+```
+
 📊 Metrics
 Sentinel exposes Prometheus metrics at:
 
-bash
-Copy code
+```
 GET /metrics
+```
+
 Example metrics:
 
-events_ingested_total
+- events_ingested_total
 
-rules_triggered_total
+- rules_triggered_total
 
-notifications_sent_total
+- notifications_sent_total
 
-🧰 Development
-bash
-Copy code
-# Run lint and type checks
-mypy .
 
-# Run tests
-pytest -v
-🧱 Project Structure (suggested)
-graphql
-Copy code
+🧱 Project Structure
+```
 sentinel/
 │
 ├── api/                # FastAPI routers and endpoints
@@ -95,3 +92,4 @@ sentinel/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
+```

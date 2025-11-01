@@ -8,8 +8,8 @@ When a rule matches an event, Sentinel triggers asynchronous notifications such 
 
 ## ✨ Features
 
-- 🚀 **Event ingestion** via HTTP (`POST /events`) or async queue  
-- 🧩 **Rule engine** with DSL syntax:
+- Event ingestion via HTTP (`POST /events`) or async queue  
+- Rule engine with DSL syntax:
   ```text
   when event.type == "order" and amount > 500 then notify("slack:#big-orders")
 

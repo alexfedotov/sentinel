@@ -1,0 +1,18 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Byte/cache files
+__pycache__/
+
+# Editor-related
+.vscode/
+
+# Migrations / build artifacts
+dist/
+build/
+
+# Local env files
+.env

@@ -35,7 +35,7 @@ git clone https://github.com/<your-username>/sentinel.git
 cd sentinel
 ```
 
-# Start the stack
+### Start the stack
 docker-compose up --build
 Test the API
 
@@ -45,7 +45,7 @@ curl -X POST http://localhost:8000/events \
   -d '{"type": "order", "amount": 750}'
 ```
 
-# Example Rule
+### Example Rule
 ```
 {
   "name": "High value orders",
@@ -53,7 +53,7 @@ curl -X POST http://localhost:8000/events \
 }
 ```
 
-# Metrics
+### Metrics
 Sentinel exposes Prometheus metrics at:
 
 ```
@@ -69,7 +69,7 @@ Example metrics:
 - notifications_sent_total
 
 
-# Project Structure
+### Project Structure
 ```
 sentinel/
 │
